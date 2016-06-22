@@ -12,4 +12,97 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
+
+.btn-primary:visited {
+  color:white;
+}
+
+td a {
+  color:#666;
+}
+
+td a:visited {
+  color:#666;
+}
+
+html {
+  font-family: "Helvetica Neue", sans-serif;
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  height: 100%;
+  padding-bottom: 70px;
+}
+
+form {
+  max-width: 400px;
+  margin: auto;
+}
+
+.amc-button-margin {
+  margin-top: 12px;
+  margin-bottom: 20px;
+}
+
+.amc-centrar {
+
+}
+
+.amc-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+    height: 50px;
+    line-height: 50px;
+}
+
+nav.navbar {
+  background-color: #0275d8;
+}
+
+ul.navbar-nav {
+  margin-top: 16px;
+}
+
+a.nav-link {
+  color: white !important;
+}
+a.navbar-link {
+  color: white !important;
+}
+
+ul.navbar-nav {
+  color: white;
+  float: right;
+}
+
+body > div > div > table > tbody > tr > td > a {
+  color: #0275d8;
+}
+
+body > div > div > table > tbody > tr > td > a:visited {
+  color: #0275d8;
+}
+
+.fa {
+  margin-bottom: 20px;
+}
+
+.amc_hello {
+  float: right;
+}
+
+.amc_hello p {
+  color: black;
+}
+
+.nav-item {
+  margin-left: 50px !important;
+}
+
+

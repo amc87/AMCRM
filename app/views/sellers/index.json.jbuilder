@@ -1,4 +1,4 @@
-json.array!(@sellers) do |seller|
-  json.extract! seller, :id, :name
-  json.url seller_url(seller, format: :json)
+json.array!(@propietarios) do |propietario|
+  json.extract! propietario, :id, :name, :apellidos, :nif, :email, :telephone, :telephone2, :asesor, :asesor_id
+  json.url propietario_url(propietario, format: :json)
 end

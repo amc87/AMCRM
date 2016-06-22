@@ -1,21 +1,50 @@
-<%= form_for(@seller) do |f| %>
-  <% if @seller.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@seller.errors.count, "error") %> prohibited this seller from being saved:</h2>
+<div class="container">
 
-      <ul>
-      <% @seller.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <%= form_for(@seller) do |f| %>
+    <% if @seller.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@seller.errors.count, "error") %> prohibited this seller from being saved:</h2>
+
+        <ul>
+        <% @seller.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :name, "Nombre" %><br>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :last_name, "Apellidos" %><br>
+      <%= f.text_field :last_name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :nif, "NIF" %><br>
+      <%= f.text_field :nif, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :email, "E-mail" %><br>
+      <%= f.text_field :email, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :telephone1, "Teléfono" %><br>
+      <%= f.text_field :telephone1, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :telephone2 %><br>
+      <%= f.text_field :telephone2, class: "form-control" %>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <%= f.submit class:"btn btn-primary" %>
+      </div>
+      <div class="col-sm-6">
+        <%= link_to 'Atrás', sellers_path, class:"btn btn-primary-outline" %>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
