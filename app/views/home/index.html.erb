@@ -9,7 +9,7 @@
         <i class="fa fa-key fa-3x"></i>
         <h4 class="card-title">Clientes</h4>
         <p class="card-text">Da de alta a nuevos clientes o consulta los ya existentes.</p>
-        <%= link_to "Clientes", root_path, class: "btn btn-primary" %>
+        <%= link_to "Clientes", buyers_path, class: "btn btn-primary" %>
       </div>
     </div>
     <div class="col-sm-4">
@@ -24,7 +24,7 @@
         <i class="fa fa-home fa-3x"></i>
         <h4 class="card-title">Propiedades</h4>
         <p class="card-text">Da de alta a nuevas propiedades o consulta los ya existentes.</p>
-        <a href="#" class="btn btn-primary">Propiedades</a>
+        <%= link_to "Clientes", properties_path, class: "btn btn-primary" %>
       </div>
     </div>
   </div>
@@ -39,7 +39,7 @@
         <i class="fa fa-map fa-3x"></i>
         <h4 class="card-title">Mapa</h4>
         <p class="card-text">Consulta el mapa con todas las propiedades localizadas.</p>
-        <a href="#" class="btn btn-primary">Mapa</a>
+        <%= link_to "Mapa", properties_path, class: "btn btn-primary" %>
       </div>
     </div>
     <div class="col-sm-4">
@@ -47,7 +47,7 @@
         <i class="fa fa-briefcase fa-3x"></i>
         <h4 class="card-title">Asesores</h4>
         <p class="card-text">Consulta los asesores.</p>
-        <a href="#" class="btn btn-primary">Asesores</a>
+        <%= link_to "Asesores", edit_user_registration_path, class: "btn btn-primary" %>
       </div>
     </div>
   </div>

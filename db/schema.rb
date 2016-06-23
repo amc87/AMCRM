@@ -11,7 +11,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160622093059) do
+ActiveRecord::Schema.define(version: 20160623111115) do
+
+  create_table "buyers", force: :cascade do |t|
+    t.string   "name"
+    t.string   "last_name"
+    t.string   "nif"
+    t.string   "email"
+    t.string   "telephone1"
+    t.string   "telephone2"
+    t.string   "idioma"
+    t.string   "adress"
+    t.string   "city"
+    t.string   "country"
+    t.string   "postal_code"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "buyers", ["user_id"], name: "index_buyers_on_user_id"
+
+  create_table "porfolios", force: :cascade do |t|
+    t.integer  "seller_id"
+    t.integer  "property_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "porfolios", ["property_id"], name: "index_porfolios_on_property_id"
+  add_index "porfolios", ["seller_id"], name: "index_porfolios_on_seller_id"
+
+  create_table "properties", force: :cascade do |t|
+    t.string   "title"
+    t.string   "subtitle"
+    t.string   "description"
+    t.string   "size"
+    t.string   "type"
+    t.string   "address"
+    t.string   "city"
+    t.string   "country"
+    t.string   "operation_type"
+    t.string   "extras"
+    t.integer  "user_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "properties", ["user_id"], name: "index_properties_on_user_id"
 
   create_table "sellers", force: :cascade do |t|
     t.string   "name"
@@ -23,7 +70,10 @@ ActiveRecord::Schema.define(version: 20160622093059) do
     t.string   "idioma"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "sellers", ["user_id"], name: "index_sellers_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

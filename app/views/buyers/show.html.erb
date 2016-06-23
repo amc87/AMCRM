@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @buyer.name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @buyer.last_name %>
+</p>
+
+<p>
+  <strong>Nif:</strong>
+  <%= @buyer.nif %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @buyer.email %>
+</p>
+
+<p>
+  <strong>Telephone1:</strong>
+  <%= @buyer.telephone1 %>
+</p>
+
+<p>
+  <strong>Telephone2:</strong>
+  <%= @buyer.telephone2 %>
+</p>
+
+<p>
+  <strong>Idioma:</strong>
+  <%= @buyer.idioma %>
+</p>
+
+<p>
+  <strong>Adress:</strong>
+  <%= @buyer.adress %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @buyer.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @buyer.country %>
+</p>
+
+<p>
+  <strong>Postal code:</strong>
+  <%= @buyer.postal_code %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @buyer.user %>
+</p>
+
+<%= link_to 'Edit', edit_buyer_path(@buyer) %> |
+<%= link_to 'Back', buyers_path %>
