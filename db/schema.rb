@@ -32,15 +32,15 @@ ActiveRecord::Schema.define(version: 20160623111115) do
 
   add_index "buyers", ["user_id"], name: "index_buyers_on_user_id"
 
-  create_table "porfolios", force: :cascade do |t|
+  create_table "portfolios", force: :cascade do |t|
     t.integer  "seller_id"
     t.integer  "property_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  add_index "porfolios", ["property_id"], name: "index_porfolios_on_property_id"
-  add_index "porfolios", ["seller_id"], name: "index_porfolios_on_seller_id"
+  add_index "portfolios", ["property_id"], name: "index_portfolios_on_property_id"
+  add_index "portfolios", ["seller_id"], name: "index_portfolios_on_seller_id"
 
   create_table "properties", force: :cascade do |t|
     t.string   "title"
