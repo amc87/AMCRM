@@ -10,10 +10,11 @@ User.destroy_all
 Seller.destroy_all
 Buyer.destroy_all
 Property.destroy_all
+Portfolio.destroy_all
 
 
 admin = User.create(
-  email: "test@test.com",
+  email: "test@t.com",
   password: "12345678"
 )
 
@@ -109,3 +110,22 @@ property2 = Property.create(
   extras: "chimenea, terraza",
   user_id: consultant3.id
 )
+
+property3 = Property.create(
+  title: "Piso requeteprecioso",
+  subtitle: "Piso super completo",
+  description: "Piso bastante completo y más texto",
+  size: "126",
+  address: "Av. Castellana 230",
+  city: "Barcelona",
+  country: "España",
+  operation_type: "Venta",
+  extras: "chimenea, terraza",
+  user_id: consultant3.id
+)
+
+
+seller1.portfolios.create(property_id: property1.id)
+seller2.portfolios.create(property_id: property1.id)
+seller3.portfolios.create(property_id: property2.id)
+seller3.portfolios.create(property_id: property3.id)

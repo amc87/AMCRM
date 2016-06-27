@@ -1,61 +1,74 @@
-<%= form_for(@property) do |f| %>
-  <% if @property.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@property.errors.count, "error") %> prohibited this property from being saved:</h2>
+<div class="container">
 
-      <ul>
-      <% @property.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <%= form_for(@property) do |f| %>
+    <% if @property.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@property.errors.count, "error") %> prohibited this property from being saved:</h2>
+
+        <ul>
+        <% @property.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :title %><br>
+      <%= f.text_field :title, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :subtitle %><br>
+      <%= f.text_field :subtitle, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :description %><br>
+      <%= f.text_field :description, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :size %><br>
+      <%= f.text_field :size, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :type %><br>
+      <%= f.text_field :type, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :address %><br>
+      <%= f.text_field :address, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :city %><br>
+      <%= f.text_field :city, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :country %><br>
+      <%= f.text_field :country, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :operation_type %><br>
+      <%= f.text_field :operation_type, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :extras %><br>
+      <%= f.text_field :extras, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :user_id %><br>
+      <%= f.text_field :user_id, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label "Propietario" %><br>
+
+      <%= autocomplete_field_tag 'Buscar', '', autocomplete_seller_name_properties_path, :size => 75, class: "form-control" %>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <%= f.submit class:"btn btn-primary" %>
+      </div>
+      <div class="col-sm-6">
+        <%= link_to 'Atrás', sellers_path, class:"btn btn-primary-outline" %>
+      </div>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :subtitle %><br>
-    <%= f.text_field :subtitle %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :size %><br>
-    <%= f.text_field :size %>
-  </div>
-  <div class="field">
-    <%= f.label :type %><br>
-    <%= f.text_field :type %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :country %><br>
-    <%= f.text_field :country %>
-  </div>
-  <div class="field">
-    <%= f.label :operation_type %><br>
-    <%= f.text_field :operation_type %>
-  </div>
-  <div class="field">
-    <%= f.label :extras %><br>
-    <%= f.text_field :extras %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

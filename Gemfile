@@ -11,6 +11,8 @@ gem 'jbuilder',             '2.5.0'
 gem 'sdoc',                 '0.4.1', group: :doc
 gem 'devise'
 gem "font-awesome-rails"
+gem 'jquery-ui-rails'
+gem 'rails-jquery-autocomplete'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.11'

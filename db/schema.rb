@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623111115) do
+ActiveRecord::Schema.define(version: 20160627111008) do
 
   create_table "buyers", force: :cascade do |t|
     t.string   "name"
@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(version: 20160623111115) do
   add_index "buyers", ["user_id"], name: "index_buyers_on_user_id"
 
   create_table "portfolios", force: :cascade do |t|
-    t.integer  "seller_id"
     t.integer  "property_id"
+    t.integer  "seller_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

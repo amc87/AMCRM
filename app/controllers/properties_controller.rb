@@ -1,5 +1,6 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: [:show, :edit, :update, :destroy]
+  autocomplete :seller, :name
 
   # GET /properties
   # GET /properties.json

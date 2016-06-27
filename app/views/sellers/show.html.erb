@@ -1,34 +1,104 @@
-<p id="notice"><%= notice %></p>
+<br>
+<div class="container">
 
-<p>
-  <strong>Name:</strong>
-  <%= @seller.name %>
-</p>
+  <div class="card card-block">
+    <div class="row">
+      <div class="col-sm-6">
 
-<p>
-  <strong>Apellidos:</strong>
-  <%= @seller.last_name %>
-</p>
+        <p>
+          <strong>Name:</strong>
+          <%= @seller.name %>
+        </p>
 
-<p>
-  <strong>Nif:</strong>
-  <%= @seller.nif %>
-</p>
+        <p>
+          <strong>Apellidos:</strong>
+          <%= @seller.last_name %>
+        </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @seller.email %>
-</p>
+        <p>
+          <strong>Nif:</strong>
+          <%= @seller.nif %>
+        </p>
+      </div>
+      <div class="col-sm-6">
+        <p>
+          <strong>Email:</strong>
+          <%= @seller.email %>
+        </p>
 
-<p>
-  <strong>Telephone:</strong>
-  <%= @seller.telephone1 %>
-</p>
+        <p>
+          <strong>Telephone:</strong>
+          <%= @seller.telephone1 %>
+        </p>
 
-<p>
-  <strong>Telephone2:</strong>
-  <%= @seller.telephone2 %>
-</p>
+        <p>
+          <strong>Telephone2:</strong>
+          <%= @seller.telephone2 %>
+        </p>
+      </div>
+    </div>
+  </div>
 
-<%= link_to 'Edit', edit_seller_path(@seller) %> |
-<%= link_to 'Back', sellers_path %>
+  <div class="row">
+    <div class="col-sm-6">
+      <%= link_to 'Editar', edit_seller_path(@seller), class:"btn btn-primary" %>
+
+      <%= link_to 'Atrás', sellers_path, class:"btn btn-primary-outline" %>
+    </div>
+  </div>
+
+</div> <!-- End of container -->
+
+<br>
+
+
+
+<h3>Propiedades de <%= @seller.name + " " + @seller.last_name %></h3>
+  <div class="table-responsive">
+
+    <table class="table table-striped">
+      <thead class="thead-inverse">
+        <tr>
+          <th>Title</th>
+          <th>Subtitle</th>
+          <th>Description</th>
+          <th>Size</th>
+          <th>Type</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>Country</th>
+          <th>Operation type</th>
+          <th>Extras</th>
+          <th>Consultor</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @seller.properties.each do |property| %>
+          <tr>
+            <td><%= property.title %></td>
+            <td><%= property.subtitle %></td>
+            <td><%= property.description %></td>
+            <td><%= property.size %></td>
+            <td><%= property.type %></td>
+            <td><%= property.address %></td>
+            <td><%= property.city %></td>
+            <td><%= property.country %></td>
+            <td><%= property.operation_type %></td>
+            <td><%= property.extras %></td>
+            <td><%= property.user.email %></td>
+            <td><%= link_to 'Show', property %></td>
+            <td><%= link_to 'Edit', edit_property_path(property) %></td>
+            <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div> <!-- End of table-responsive -->
+
+
+
+  <%= link_to 'Añadir propiedad', new_property_path(@seller), class:"btn btn-primary" %>
+
